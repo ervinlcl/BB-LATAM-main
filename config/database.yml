@@ -1,29 +1,29 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: mi_gran_empresa_production
+  database: mi_gran_empresa_development
   pool: 5
-  username: mi_gran_empresa
-  password: 121788gloriA
-  timeout: 5000
+  username: tu_usuario_local
+  password: tu_contraseña_local
   host: localhost
+  port: 5432
 
 test:
   adapter: postgresql
   encoding: unicode
   database: mi_gran_empresa_test
   pool: 5
-  username: mi_gran_empresa
-  password: 121788gloriA
-  timeout: 5000
+  username: tu_usuario_local
+  password: tu_contraseña_local
   host: localhost
+  port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: mi_gran_empresa_production
+  database: mi_gran_empresa_db
   pool: 5
-  username: mi_gran_empresa
-  password: 121788gloriA
-  timeout: 5000
-  host: localhost
+  username: mi_gran_empresa_db_user
+  password: xVtsPcet8oRYWM8jeINjbsdF4yVQVEap
+  host: dpg-cu2volds78s739d2910-a
+  port: 5432
