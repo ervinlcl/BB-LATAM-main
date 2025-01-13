@@ -1,30 +1,31 @@
 class Post < ApplicationRecord
-
-
-
-has_attached_file :picture
-validates_attachment_presence :picture
-validates_attachment_size :picture, :less_than => 100.megabytes
-validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
-before_create :check_max_value
-
-validates_uniqueness_of :company_name
-def check_max_value
-
-if Post.last != nil
-
-	self.id = Post.last.id + 1
-  	self.post_id = Post.last.id + 1
-else
+	# Configuración de Paperclip
+	has_attached_file :picture
 	
-	self.id = 1
-  	self.post_id = 1
-
-end
-
-    
-end
-
-self.primary_key = "post_id"
-belongs_to :columnist
-end
+	# Validaciones para el archivo adjunto (Paperclip)
+	validates_attachment :picture,
+						 presence: true,
+						 content_type: { content_type: ['image/jpeg', 'image/png', 'image/jpg'] },
+						 size: { less_than: 100.megabytes }
+  
+	# Validaciones del modelo
+	validates :company_name, presence: true, uniqueness: true
+  
+	# Asignar `post_id` antes de guardar el registro
+	before_create :assign_post_id
+  
+	# Relación opcional
+	belongs_to :columnist, optional: true
+  
+	# Definir clave primaria
+	self.primary_key = "post_id"
+  
+	private
+  
+	# Método privado para asignar `post_id`
+	def assign_post_id
+	  last_post_id = Post.maximum(:post_id) # Obtiene el valor más alto de post_id
+	  self.post_id = last_post_id.present? ? last_post_id + 1 : 1
+	end
+  end
+  

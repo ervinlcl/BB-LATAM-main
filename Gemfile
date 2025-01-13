@@ -1,64 +1,33 @@
 source 'https://rubygems.org'
 
-#git_source(:github) do |repo_name|
-#  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-#  "https://github.com/#{repo_name}.git"
-#end
+# Rails y gemas principales
+gem 'rails', '~> 5.2' # Especifica la versión de Rails
+gem 'pg' # Usar PostgreSQL como base de datos
+gem 'puma', '~> 3.7' # Servidor web predeterminado para Rails
+gem 'sass-rails', '~> 5.0' # CSS con Sass
+gem 'uglifier', '>= 1.3.0' # Compresor de JavaScript
+gem 'coffee-rails', '~> 4.2' # Soporte para CoffeeScript
+gem 'turbolinks', '~> 5' # Navegación rápida entre páginas
+gem 'recaptcha', '~> 4.0'
+gem 'aws-sdk-s3', '~> 1.0'
 
-gem 'geocoder'
-gem 'unicorn'
-gem 'paperclip'
-gem "bcrypt"
-gem 'conekta'
-gem 'city-state'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'pg'
-gem "recaptcha"
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'aws-sdk-core'
-gem 'aws-sdk-resources'
-gem 'aws-sdk-s3'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Paperclip para manejo de archivos adjuntos
+gem 'paperclip', '~> 6.1.0'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-gem 'rake', '~> 12.1'
+gem 'jbuilder', '~> 2.5' # Generación de JSON
 
-end
+# Compatibilidad con Windows
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Solución de problemas con mimemagic y raindrops
+gem 'mimemagic', '~> 0.3.10'
+gem 'raindrops', '~> 0.13.0'
+
+# Gemas adicionales según necesidad
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'listen', '~> 3.1.5'
+  # otras gemas de desarrollo
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
