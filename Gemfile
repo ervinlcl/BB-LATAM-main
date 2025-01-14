@@ -11,7 +11,6 @@ gem 'turbolinks', '~> 5' # Navegación rápida entre páginas
 gem 'recaptcha', '~> 4.0'
 gem 'aws-sdk-s3', '~> 1.0'
 
-
 # Paperclip para manejo de archivos adjuntos
 gem 'paperclip', '~> 6.1.0'
 
@@ -25,9 +24,8 @@ gem 'mimemagic', '~> 0.3.10'
 gem 'raindrops', '~> 0.13.0'
 
 # Gemas adicionales según necesidad
-
 group :development do
   gem 'listen', '~> 3.1.5'
-  # otras gemas de desarrollo
 end
+
 

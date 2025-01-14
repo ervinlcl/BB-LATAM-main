@@ -3,8 +3,8 @@ development:
   encoding: unicode
   database: mi_gran_empresa_development
   pool: 5
-  username: tu_usuario_local
-  password: tu_contraseña_local
+  username: postgres
+  password: 961219
   host: localhost
   port: 5432
 
@@ -13,8 +13,8 @@ test:
   encoding: unicode
   database: mi_gran_empresa_test
   pool: 5
-  username: tu_usuario_local
-  password: tu_contraseña_local
+  username: postgres
+  password: 961219
   host: localhost
   port: 5432
 
@@ -27,3 +27,4 @@ production:
   password: xVtsPcet8oRYWM8jeINjbsdF4yVQVEap
   host: dpg-cu2volds78s739d2910-a
   port: 5432
+
