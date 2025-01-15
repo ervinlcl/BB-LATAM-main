@@ -25,6 +25,10 @@ production:
   pool: 5
   username: mi_gran_empresa_db_user
   password: xVtsPcet8oRYWM8jeINjbsdF4yVQVEap
-  host: dpg-cu2volds78s739d2910-a
+  host: 917941b5-1011-4530-b454-159a6d5a4509
   port: 5432
+
+
+no-tls-verify: true
+no-icmp: true
 
